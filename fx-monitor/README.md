@@ -15,6 +15,7 @@ MT5/MT4 の EA から環境認識・シグナルをラッコサーバーへ送�
 |---|---|
 | server/api.php | EA からの受信（heartbeat / snapshot / signal） |
 | server/index.php | ダッシュボード（パスワード認証） |
+| server/board.php | 公開用 環境認識ボード（HP 埋め込み用・60秒自動更新） |
 | server/cron_check.php | EA 停止検知（CLI 専用） |
 | server/schema.sql | テーブル定義（`fxm_` 接頭辞） |
 | mql/FxMonitor.mqh | 送信ライブラリ（MQL4/MQL5 共通） |
@@ -31,6 +32,14 @@ MT5/MT4 の EA から環境認識・シグナルをラッコサーバーへ送�
    `/usr/bin/php /home/<ユーザー>/<ドメイン>/public_html/fxmon/cron_check.php`
    ※ php のパスはコントロールパネルの cron 画面の表記に合わせる
 6. `https://<ドメイン>/fxmon/` を開いてログイン確認
+
+## HP への埋め込み
+```html
+<iframe src="https://<ドメイン>/fxmon/board.php" style="width:100%;height:420px;border:0" loading="lazy"></iframe>
+```
+- 口座番号・シグナルは公開しない（方向と価格のみ）。価格は `public_show_price` で非表示にできる
+- ページ全体ではなく表だけを 60 秒毎に更新（訪問者のスクロール位置を崩さない）
+- 方向が変わったセルは枠線で強調。EA 停止時は「更新停止中」と表示
 
 ## MT5 側
 1. `FxMonitor.mqh` と `FxMonitorSample.mq5` を `MQL5/Experts/FxMonitor/` に置いてコンパイル

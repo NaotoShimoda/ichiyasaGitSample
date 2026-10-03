@@ -18,5 +18,10 @@ return [
     // EA 停止とみなす無通信時間（分）
     'heartbeat_timeout_min' => 15,
 
+    // 公開ボード（board.php）
+    'public_title'      => 'リアルタイム環境認識ボード',
+    'public_account'    => '',    // 表示する口座番号（空なら最後に受信した口座）
+    'public_show_price' => true,  // false で価格を非表示（方向のみ）
+
     'timezone' => 'Asia/Tokyo',
 ];
