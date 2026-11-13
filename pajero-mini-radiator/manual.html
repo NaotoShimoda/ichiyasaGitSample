@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<title>パジェロミニ H58A ラジエター交換手順書</title>
+<style>
+@page{size:A4;margin:14mm 14mm 16mm}
+*{box-sizing:border-box}
+body{font-family:"IPAGothic","IPAPGothic","WenQuanYi Zen Hei",sans-serif;font-size:10.5pt;line-height:1.6;color:#1b1f24;margin:0}
+h1{font-size:22pt;margin:0 0 4mm;color:#0b3d6b}
+h2{font-size:14pt;background:#0b3d6b;color:#fff;padding:2mm 4mm;margin:7mm 0 3mm;border-radius:2mm;break-after:avoid}
+h3{font-size:11.5pt;margin:4mm 0 1.5mm;color:#0b3d6b;border-left:3mm solid #e8a100;padding-left:2mm;break-after:avoid}
+table{border-collapse:collapse;width:100%;margin:2mm 0;font-size:9.8pt}
+th,td{border:.3mm solid #9aa5b1;padding:1.3mm 2mm;vertical-align:top;text-align:left}
+th{background:#e6eef6}
+.box{border:.4mm solid;border-radius:2mm;padding:2.5mm 3.5mm;margin:3mm 0;break-inside:avoid}
+.warn{background:#fff3e0;border-color:#e8a100}
+.ng{background:#fdecea;border-color:#c62828}
+.ok{background:#e8f5e9;border-color:#2e7d32}
+.chk{background:#eef4fb;border-color:#0b3d6b}
+.step{display:flex;gap:3mm;margin:3mm 0;break-inside:avoid}
+.num{flex:none;width:8mm;height:8mm;border-radius:50%;background:#e8a100;color:#fff;font-weight:bold;text-align:center;line-height:8mm}
+.step .t b{color:#0b3d6b}
+.tag{display:inline-block;font-size:8.5pt;padding:0 1.6mm;border-radius:1mm;color:#fff;background:#c62828;margin-right:1mm}
+.tag.s{background:#2e7d32}
+svg{display:block;margin:2mm auto;max-width:100%}
+.cap{text-align:center;font-size:9pt;color:#555;margin-top:-1mm}
+.cover{background:linear-gradient(135deg,#0b3d6b,#1c6aa8);color:#fff;border-radius:3mm;padding:8mm;margin-bottom:5mm}
+.cover h1{color:#fff;font-size:24pt}
+.small{font-size:8.8pt;color:#444}
+.pb{break-before:page}
+li{margin:.5mm 0}
+</style></head><body>
+
+<div class="cover">
+<div style="font-size:11pt;opacity:.85">DIY 整備手順書</div>
+<h1>パジェロミニ（ABA-H58A）<br>ラジエター交換手順書</h1>
+<div>フィールドエディション ／ 4A30 ターボ ／ <b>AT車</b></div>
+<div style="margin-top:3mm;font-size:9.5pt;opacity:.9">初度登録 2008年2月 ／ 車台番号 H58A-0719618 ／ 作成日 2026-11-13</div>
+</div>
+
+<div class="box ng"><b>⚠ 必ずお読みください</b><br>
+本書は、みんカラ（個人の整備記録3件）と一般的な冷却系整備の知識をまとめたものです。<b>三菱の整備解説書の代わりにはなりません</b>。締付けトルク・冷却水量・ATFの規格は記録に記載がなかったため<span class="tag">要確認</span>としています。作業は自己責任で、<b>必ずエンジン冷間時</b>に行ってください。</div>
+
+<h2>1. 作業の全体像</h2>
+<table>
+<tr><th style="width:28%">作業時間の目安</th><td>1〜3時間（AT車はNA車より手間が増える）</td></tr>
+<tr><th>難易度</th><td>初級〜中級（参考記録は「初級」評価）</td></tr>
+<tr><th>外すもの</th><td>アンダーカバー、リザーバータンク、ホース類、ATクーラーホース、電動ファンのコネクター、ラジエターのブラケット</td></tr>
+<tr><th>AT車の特徴</th><td>ラジエターがATFクーラーを兼ねている → ATFホース（2本）の脱着が必要</td></tr>
+</table>
+
+<h3>漏れの原因は本当にラジエターか？（先に確認）</h3>
+<p>参考記録では、漏れの多くは<b>アッパータンク（樹脂部）の割れ・かしめ部</b>でした。ターボの熱で傷みやすいとされています。交換前に次を目視してください。</p>
+<table>
+<tr><th>チェック箇所</th><th>見るポイント</th></tr>
+<tr><td>アッパータンクの付け根・ホース口</td><td>ひび、白い/緑の跡、変色（焼け）</td></tr>
+<tr><td>ラジエターのかしめ部（樹脂と金属の境目）</td><td>にじみ、クーラントの乾いた跡</td></tr>
+<tr><td>アッパー／ロアホース</td><td>硬化、ひび割れ、膨らみ</td></tr>
+<tr><td>ラジエターキャップ</td><td>ゴムの劣化（劣化しているなら同時交換）</td></tr>
+<tr><td>サーモスタット周辺・ウォーターポンプ</td><td>にじみ</td></tr>
+</table>
+<p class="small">※確実に調べるなら、ラジエターテスター（加圧テスト）で漏れ箇所を確認できます。</p>
+
+<h2 class="pb">2. 冷却系の構成図</h2>
+<svg viewBox="0 0 700 350" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="IPAGothic,WenQuanYi Zen Hei,sans-serif">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c62828"/></marker>
+  </defs>
+  <text x="12" y="20" font-size="14" fill="#555">◀ 車両の前方</text>
+  <text x="560" y="20" font-size="14" fill="#555">室内側 ▶</text>
+  <!-- radiator -->
+  <rect x="40" y="70" width="70" height="200" rx="6" fill="#bcd3ea" stroke="#0b3d6b" stroke-width="3"/>
+  <text x="75" y="175" font-size="15" text-anchor="middle" fill="#0b3d6b" transform="rotate(-90 75 175)">ラジエター</text>
+  <rect x="30" y="48" width="90" height="26" rx="5" fill="#f4c7a3" stroke="#a04a00" stroke-width="2"/>
+  <text x="75" y="66" font-size="11" text-anchor="middle">アッパータンク</text>
+  <rect x="30" y="266" width="90" height="26" rx="5" fill="#cfe9d3" stroke="#2e7d32" stroke-width="2"/>
+  <text x="75" y="284" font-size="11" text-anchor="middle">ロアタンク</text>
+  <!-- fan -->
+  <rect x="116" y="95" width="34" height="150" rx="4" fill="#eee" stroke="#555" stroke-width="2"/>
+  <text x="133" y="170" font-size="12" text-anchor="middle" transform="rotate(-90 133 170)">ファン</text>
+  <!-- engine -->
+  <rect x="330" y="85" width="230" height="190" rx="10" fill="#d8d8d8" stroke="#444" stroke-width="3"/>
+  <text x="445" y="170" font-size="20" text-anchor="middle">エンジン 4A30</text>
+  <text x="445" y="195" font-size="13" text-anchor="middle" fill="#555">ターボ</text>
+  <!-- thermostat -->
+  <circle cx="345" cy="115" r="13" fill="#fff" stroke="#c62828" stroke-width="3"/>
+  <text x="372" y="109" font-size="12" fill="#c62828">サーモ</text>
+  <!-- upper hose -->
+  <path d="M110 80 H300 Q345 80 345 102" fill="none" stroke="#c62828" stroke-width="9"/>
+  <text x="200" y="68" font-size="13" fill="#c62828" text-anchor="middle">① アッパーホース（熱水 →）</text>
+  <!-- lower hose -->
+  <path d="M110 278 H330" fill="none" stroke="#1565c0" stroke-width="9"/>
+  <text x="215" y="306" font-size="13" fill="#1565c0" text-anchor="middle">② ロアホース（← 冷却水）</text>
+  <!-- ATF lines -->
+  <path d="M60 292 V318 H300" fill="none" stroke="#6a1b9a" stroke-width="4" stroke-dasharray="8 4"/>
+  <path d="M90 292 V312 H300" fill="none" stroke="#6a1b9a" stroke-width="4" stroke-dasharray="8 4"/>
+  <text x="305" y="318" font-size="12" fill="#6a1b9a">③ ATクーラーホース×2 → ATへ</text>
+  <!-- drain -->
+  <circle cx="75" cy="302" r="0" />
+  <!-- reserve tank -->
+  <rect x="190" y="130" width="70" height="60" rx="6" fill="#fff" stroke="#00796b" stroke-width="3"/>
+  <text x="225" y="155" font-size="12" text-anchor="middle" fill="#00796b">リザーバー</text>
+  <text x="225" y="172" font-size="12" text-anchor="middle" fill="#00796b">タンク</text>
+  <path d="M110 100 H150 V150 H190" fill="none" stroke="#00796b" stroke-width="3"/>
+  <text x="40" y="340" font-size="12" fill="#333">▲ ドレンコック：ロアタンク下部</text>
+  <path d="M75 292 v6" stroke="#333" stroke-width="3"/>
+</svg>
+<div class="cap">図1　冷却系とAT車のATFクーラーホース（模式図・実際の配置は異なります）</div>
+
+<div class="box chk"><b>覚え方：</b>上の太いホース＝熱い水が通る。下の太いホース＝冷えた水が戻る。AT車は<b>ラジエター下部にATFのホースが2本</b>付いている（点線）。</div>
+
+<h2>3. 必要な部品・工具</h2>
+<table>
+<tr><th style="width:24%">区分</th><th>品名</th><th style="width:22%">備考</th></tr>
+<tr><td rowspan="5">部品</td><td>ラジエター（AT用）</td><td>車台番号で適合確認。社外品の例：Cooling Door製（参考記録で使用）</td></tr>
+<tr><td>ラジエターホース（アッパー／ロア）</td><td>劣化していれば同時交換（三菱純正の例あり）</td></tr>
+<tr><td>ホースバンド</td><td>純正のワンタッチ式が楽（記録より）</td></tr>
+<tr><td>ラジエターキャップ</td><td>同時交換を推奨</td></tr>
+<tr><td>サーモスタット</td><td>同時交換を推奨（互換品の例：多摩興業）</td></tr>
+<tr><td rowspan="3">消耗品</td><td>LLC（ロングライフクーラント）</td><td>量・濃度は<span class="tag">要確認</span>（目安5〜6L）</td></tr>
+<tr><td>ATF</td><td>規格は<span class="tag">要確認</span>（純正指定品）。補充用に少量</td></tr>
+<tr><td>廃液容器×2</td><td>クーラント用とATF用を分ける</td></tr>
+<tr><td rowspan="3">工具</td><td>ソケットレンチ・マイナス/プラスドライバー・ペンチ</td><td>—</td></tr>
+<tr><td><b>ホースピンチャー</b></td><td>ATFホースを潰して油漏れを防ぐ（記録で使用）</td></tr>
+<tr><td>クーラントチャージャー（あれば）</td><td>エア噛みを防いで注入できて楽（記録より）</td></tr>
+<tr><td>その他</td><td>ジャッキ・ウマ、ウエス、油性ペン、スマホ（写真記録）</td><td>—</td></tr>
+</table>
+
+<h2 class="pb">4. 作業手順（全12ステップ）</h2>
+
+<div class="box warn"><b>作業前の準備</b>：エンジン冷間／平らな場所／バッテリー−端子を外す／ホースの位置関係を<b>写真に撮る</b>／ATホースのIN・OUTを<b>油性ペンでマーキング</b>。</div>
+
+<div class="step"><div class="num">1</div><div class="t"><b>アンダーカバーを外す</b><br>参考記録によると、<b>アンダーカバーを外すだけで作業可能</b>とのことです。フロントを上げる場合は、ウマで確実に固定します。</div></div>
+
+<div class="step"><div class="num">2</div><div class="t"><b>クーラントを抜く</b><br>ラジエター下部のドレンを緩めて、受け皿に排出します。キャップは開けておくと抜けやすいです。<br><span class="small">記録では約1Lしか出ませんでした（漏れで量が減っていたため）。全量を抜く場合はエンジン側のドレンも確認してください。<span class="tag">要確認</span></span></div></div>
+
+<div class="step"><div class="num">3</div><div class="t"><b>ロアホースを外す</b><br>ホースバンドを緩め、ホースを引き抜きます。残りのクーラントが出るので受け皿で受けます。</div></div>
+
+<div class="step"><div class="num">4</div><div class="t"><b>【AT車の重要作業】ATクーラーホースを外す</b></div></div>
+
+<svg viewBox="0 0 700 220" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="IPAGothic,WenQuanYi Zen Hei,sans-serif">
+  <rect x="30" y="20" width="300" height="60" rx="8" fill="#cfe9d3" stroke="#2e7d32" stroke-width="3"/>
+  <text x="180" y="57" text-anchor="middle" font-size="16">ラジエター ロアタンク</text>
+  <rect x="80" y="80" width="22" height="46" fill="#6a1b9a"/><rect x="250" y="80" width="22" height="46" fill="#6a1b9a"/>
+  <text x="52" y="108" text-anchor="middle" font-size="12" fill="#6a1b9a">IN/OUT</text>
+  <text x="300" y="108" text-anchor="middle" font-size="12" fill="#6a1b9a">OUT/IN</text>
+  <path d="M91 126 Q91 175 160 190 H340" stroke="#6a1b9a" stroke-width="9" fill="none"/>
+  <path d="M261 126 Q261 160 300 168 H340" stroke="#6a1b9a" stroke-width="9" fill="none"/>
+  <!-- pincher -->
+  <g transform="translate(170,163)"><rect x="-18" y="-6" width="36" height="12" rx="3" fill="#e8a100" stroke="#8a5a00" stroke-width="2"/><path d="M-18 -6 L-30 -22 M18 -6 L30 -22" stroke="#8a5a00" stroke-width="5"/></g>
+  <text x="170" y="138" font-size="13" text-anchor="middle" fill="#8a5a00">ピンチャー</text>
+  <text x="350" y="196" font-size="14" fill="#6a1b9a">→ ATミッション側へ</text>
+  <rect x="440" y="20" width="240" height="120" rx="8" fill="#fff3e0" stroke="#e8a100" stroke-width="2"/>
+  <text x="452" y="45" font-size="14" font-weight="bold">手順</text>
+  <text x="452" y="68" font-size="13">① ホースにマーキング（IN/OUT）</text>
+  <text x="452" y="90" font-size="13">② ピンチャーで潰す（ATF止め）</text>
+  <text x="452" y="112" font-size="13">③ バンドを外してホースを抜く</text>
+  <text x="452" y="134" font-size="13">④ 容器でATFを受ける</text>
+</svg>
+<div class="cap">図2　ATクーラーホースの外し方（模式図）</div>
+
+<div class="box warn"><b>ポイント：</b>ホースピンチャー（ホースを潰す工具）でホースを挟んでから外すと、ATFがほとんど出ません（参考記録）。無い場合は、外した口に栓をするか、空いたパイプ側に差し込んでおきます。<br>ただし、ホースを外している間は、ATFが減らないよう手早く作業してください。</div>
+
+<div class="step"><div class="num">5</div><div class="t"><b>リザーバータンクを外す</b><br>ホースを抜き、タンクを取り外します。邪魔なホース類の位置を写真に撮っておきます。</div></div>
+
+<div class="step"><div class="num">6</div><div class="t"><b>アッパーホースと電動ファンのコネクターを外す</b><br>配線のクリップ類も外します。このとき、エアクリーナーのダクトやインタークーラー配管が邪魔なら外してください<span class="tag">要確認</span>。</div></div>
+
+<div class="step"><div class="num">7</div><div class="t"><b>ブラケットを外し、ラジエターを上へ引き抜く</b><br>ブラケットを外すとラジエターがフリーになり、<b>上に引き抜けます</b>（参考記録）。下側のゴムブッシュは新品に移します。</div></div>
+
+<svg viewBox="0 0 700 200" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="IPAGothic,WenQuanYi Zen Hei,sans-serif">
+  <defs><marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#c62828"/></marker></defs>
+  <rect x="40" y="70" width="110" height="115" fill="#bcd3ea" stroke="#0b3d6b" stroke-width="3" rx="5"/>
+  <text x="95" y="135" font-size="15" text-anchor="middle">ラジエター</text>
+  <path d="M95 65 V15" stroke="#c62828" stroke-width="6" marker-end="url(#b)"/>
+  <text x="105" y="32" font-size="13" fill="#c62828">上へ引き抜く</text>
+  <text x="95" y="198" font-size="12" text-anchor="middle" fill="#555">下側ゴムブッシュ（新品へ移植）</text>
+  <rect x="230" y="20" width="440" height="160" rx="8" fill="#eef4fb" stroke="#0b3d6b" stroke-width="2"/>
+  <text x="245" y="45" font-size="14" font-weight="bold">引き抜く前の確認</text>
+  <text x="245" y="70" font-size="13">☐ クーラントを抜いた（ドレン開放）</text>
+  <text x="245" y="92" font-size="13">☐ アッパー／ロアホースを外した</text>
+  <text x="245" y="114" font-size="13">☐ ATクーラーホース2本を外した</text>
+  <text x="245" y="136" font-size="13">☐ ファンのコネクターを抜いた</text>
+  <text x="245" y="158" font-size="13">☐ リザーバーを外した ／ ブラケットを外した</text>
+</svg>
+<div class="cap">図3　ラジエター取り外し前のチェック</div>
+
+<div class="step"><div class="num">8</div><div class="t"><b>ファンユニットを移植する</b><br>旧ラジエターから、<b>ボルト2本</b>でファンユニットを外し、新品に取り付けます（参考記録）。</div></div>
+
+<div class="step"><div class="num">9</div><div class="t"><b>（推奨）エンジン側の洗浄とサーモ交換</b><br>サーモを外してアッパーホース側から水を流し、ロアホース出口から透明な水が出るまで洗浄します。洗浄後に新しいサーモを取り付けます。</div></div>
+
+<div class="step"><div class="num">10</div><div class="t"><b>新しいラジエターを取り付ける</b><br>下側のブッシュにはめて、上のブラケットを固定します。次に<b>ホースを元に戻します</b>。</div></div>
+
+<div class="box chk"><b>ホース取り付けのコツ</b><ul style="margin:1mm 0 0 5mm;padding:0">
+<li>新品ホースの<b>マーキング（ポッチ）に合わせた向き</b>で差し込む。</li>
+<li><b>ホースバンドを通し忘れない</b>ように（差し込む前に通す）。</li>
+<li>純正のワンタッチバンドは、開いた状態でロックされているので位置合わせ → ペンチでロックを解除すると固定される。</li>
+<li>ATFホースは<b>マーキングに従ってIN/OUTを間違えない</b>。</li>
+</ul></div>
+
+<div class="step"><div class="num">11</div><div class="t"><b>クーラントを注入する</b><br>リザーバーとラジエターの両方に、規定濃度のLLCを入れます。クーラントチャージャーがあれば、エアを噛まずに入れられます。</div></div>
+
+<div class="step"><div class="num">12</div><div class="t"><b>エア抜きと最終確認</b>（次ページの図4）</div></div>
+
+<h2 class="pb">5. エア抜き（12番の詳細）</h2>
+<svg viewBox="0 0 700 150" width="100%" xmlns="http://www.w3.org/2000/svg" font-family="IPAGothic,WenQuanYi Zen Hei,sans-serif">
+  <defs><marker id="c" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#0b3d6b"/></marker></defs>
+  <g font-size="13" text-anchor="middle">
+  <rect x="5" y="30" width="125" height="85" rx="8" fill="#e6eef6" stroke="#0b3d6b" stroke-width="2"/><text x="67" y="60">ヒーター</text><text x="67" y="80">最高温度・</text><text x="67" y="98">最大風量</text>
+  <rect x="150" y="30" width="125" height="85" rx="8" fill="#e6eef6" stroke="#0b3d6b" stroke-width="2"/><text x="212" y="60">キャップを</text><text x="212" y="80">開けたまま</text><text x="212" y="98">エンジン始動</text>
+  <rect x="295" y="30" width="125" height="85" rx="8" fill="#fff3e0" stroke="#e8a100" stroke-width="2"/><text x="357" y="55">2000rpm前後</text><text x="357" y="75">サーモが開き</text><text x="357" y="95">水位が下がるまで</text>
+  <rect x="440" y="30" width="125" height="85" rx="8" fill="#e6eef6" stroke="#0b3d6b" stroke-width="2"/><text x="502" y="60">不足分を補充</text><text x="502" y="80">キャップを閉める</text><text x="502" y="98">泡が出なくなる</text>
+  <rect x="585" y="30" width="110" height="85" rx="8" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2"/><text x="640" y="60">リザーバー</text><text x="640" y="80">水位確認</text><text x="640" y="98">試運転</text>
+  </g>
+  <path d="M130 72 H148 M275 72 H293 M420 72 H438 M565 72 H583" stroke="#0b3d6b" stroke-width="3" marker-end="url(#c)"/>
+</svg>
+<div class="cap">図4　エア抜きの流れ</div>
+
+<table>
+<tr><th style="width:30%">項目</th><th>内容</th></tr>
+<tr><td>エア抜きの目安</td><td>サーモが開くと水位が下がる → 補充 → 泡が出なくなるまで繰り返す。リザーバーはMAX付近。</td></tr>
+<tr><td>試運転</td><td>約30分走行して水温が安定するか確認（参考記録では88℃前後で安定）。</td></tr>
+<tr><td>冷えてから再点検</td><td>エンジンが冷えたらリザーバーの水位を再確認。減っていれば補充。</td></tr>
+</table>
+
+<h2>6. 作業後の最終チェックリスト</h2>
+<table>
+<tr><th>☐</th><th>項目</th></tr>
+<tr><td>☐</td><td>ホース接続部・ドレン・ATFホース接続部から漏れがない（エンジン始動中と停止後）</td></tr>
+<tr><td>☐</td><td>水温計が正常範囲で安定している（上がり続けない）</td></tr>
+<tr><td>☐</td><td>ヒーターから温風が出る（エアが抜けている）</td></tr>
+<tr><td>☐</td><td><b>ATF量を点検</b>：水平な場所・エンジン始動中、P→R→D→Pと入れてからレベルゲージで確認、不足なら補充</td></tr>
+<tr><td>☐</td><td>ATFが白濁・乳化していない（クーラント混入のサイン）</td></tr>
+<tr><td>☐</td><td>外した部品（アンダーカバー、ダクト、リザーバー等）を全て戻した、バッテリー端子も接続した</td></tr>
+<tr><td>☐</td><td>廃液（クーラント・ATF）を適切に処分した</td></tr>
+</table>
+
+<h2>7. 確認が必要な項目（本書に数値なし）</h2>
+<div class="box warn">
+<table>
+<tr><th style="width:36%">項目</th><th>確認方法</th></tr>
+<tr><td>締付けトルク（ブラケット・ファン等）</td><td>三菱 整備解説書 ／ ディーラー</td></tr>
+<tr><td>冷却水の容量・LLC濃度</td><td>整備解説書 ／ 取扱説明書</td></tr>
+<tr><td>ATFの種類・規定量</td><td>整備解説書（AT編）／ ディーラー</td></tr>
+<tr><td>固定ボルトの位置・本数</td><td>整備解説書 ／ 取り外し時に写真記録</td></tr>
+<tr><td>インタークーラー配管の脱着有無</td><td>実車で確認</td></tr>
+</table>
+<div class="small" style="margin-top:2mm">ディーラーへ電話するときは、車台番号 H58A-0719618 を伝えると確実です。</div>
+</div>
+
+<h2>8. 参考にした記録（出典）</h2>
+<ul class="small">
+<li>ラジエータ交換（ともの、2023/7）— https://minkara.carview.co.jp/userid/337241/car/3359003/7422806/note.aspx</li>
+<li>ラジエター交換（社有車）（えがちゃん。、2026/4）— https://minkara.carview.co.jp/userid/1128693/car/1166639/8607287/note.aspx</li>
+<li>ラジエーター交換^_^（えがちゃん。、2026/11）— https://minkara.carview.co.jp/userid/1128693/car/1166639/8832204/note.aspx</li>
+</ul>
+<p class="small">図は本書用に作成した模式図です。元の記録の写真は転載していません。写真つきの詳細は上記リンクをご覧ください。</p>
+
+</body></html>
